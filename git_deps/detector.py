@@ -185,7 +185,7 @@ class DependencyDetector(object):
 
         orig_line_num = blame_hunk.orig_start_line_number
         line_num = blame_hunk.final_start_line_number
-        dependency_sha1 = blame_hunk.orig_commit_id.hex
+        dependency_sha1 = str(blame_hunk.orig_commit_id.hex)
         line_representation = f"{dependency_sha1} {orig_line_num} {line_num}"
 
         self.logger.debug(f"          ! {line_representation}")
