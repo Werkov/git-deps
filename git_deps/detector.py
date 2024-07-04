@@ -166,9 +166,6 @@ class DependencyDetector(object):
             # which was not previously in the parent.
             return
 
-        if hunk.old_lines == 0:
-            return
-
         blame = self.run_blame(hunk, parent, path)
 
         dependent_sha1 = str(dependent.id)
